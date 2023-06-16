@@ -10,7 +10,7 @@ int main(void)
 
 	while (n < 123)
 	{
-		putchar("%c", n);
+		putchar(n);
 		n++;
 	}
 	putchar("\n");
