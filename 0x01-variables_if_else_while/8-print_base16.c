@@ -14,6 +14,7 @@ int main(void)
 			putchar(n + '0');
 		else
 			putchar(n - 10 + 'a');
+		n++;
 	}
 	putchar('\n');
 	return (0);
