@@ -8,14 +8,14 @@
 int main(void)
 {
 	int i = 3;
-	unsigned long doulbe f = 1, s = 2, next;
+	unsigned long long f = 1, s = 2, next;
 
-	printf("%Lf", f);
-	printf(", %Lf", s);
+	printf("%llu", f);
+	printf(", %llu", s);
 	while (i <= 98)
 	{
 		next = f + s;
-		 printf(", %Lf", next);
+		 printf(", %llu", next);
 		f = s;
 		s = next;
 		i++;
