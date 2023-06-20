@@ -7,12 +7,12 @@
   */
 int main(void)
 {
-	int i = 2;
+	int i = 3;
 	unsigned long f = 1, s = 2, next;
 
 	printf("%lu", f);
 	printf(", %lu", s);
-	while (i < 98)
+	while (i <= 98)
 	{
 		next = f + s;
 		 printf(", %lu", next);
