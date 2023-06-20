@@ -8,14 +8,14 @@
 int main(void)
 {
 	int i = 3;
-	unsigned long  f = 1, s = 2, next;
+	unsigned long int f = 1, s = 2, next;
 
-	printf("%lu", f);
-	printf(", %lu", s);
+	printf("%zu", f);
+	printf(", %zu", s);
 	while (i <= 98)
 	{
 		next = f + s;
-		 printf(", %lu", next);
+		 printf(", %zu", next);
 		f = s;
 		s = next;
 		i++;
