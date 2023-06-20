@@ -1,9 +1,10 @@
 #include "main.h"
 /**
-  * times_table - entry point
+  * print_times_table - entry point
+  * @n: param
   *
   */
-void times_table(void)
+void print_times_table(int n)
 {
 	int i = 0;
 	int j;
@@ -11,11 +12,11 @@ void times_table(void)
 
 	if (n >= 0 && n <= 15)
 	{
-		while (i < 10)
+		while (i <= n )
 		{
 			_putchar('0');
 			j = 1;
-			while (j < 10)
+			while (j <= n)
 			{
 				k = i * j;
 				if (k >= 0 && k <= 9)
