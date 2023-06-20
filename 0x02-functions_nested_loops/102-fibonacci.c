@@ -3,7 +3,7 @@
 /**
   * main - entry point
   *
-  *
+  * Return: int
   */
 int main(void)
 {
@@ -20,4 +20,5 @@ int main(void)
 		s = next;
 		i++;
 	}
+	return (0);
 }
