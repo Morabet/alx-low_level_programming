@@ -7,13 +7,13 @@
   */
 void print_times_table(int n)
 {
-	int i = 0, j ,k;
+	int i = 0 , j , k;
 
 	if (n >= 0 && n <= 15)
 	{
-		while (i <= n )
+		while (i <= n)
 		{
-			_putchar('0');
+			printf("0");
 			j = 1;
 			while (j <= n)
 			{
