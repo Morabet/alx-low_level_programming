@@ -10,6 +10,7 @@ void print_alphabet_x10(void)
 
 	for (count = 1; count < 11; count++)
 	{
+		i = 97;
 		while (i < 123)
 		{
 			_putchar(i);
