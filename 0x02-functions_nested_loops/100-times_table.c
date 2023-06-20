@@ -20,17 +20,16 @@ void print_times_table(int n)
 				k = i * j;
 				if (k >= 0 && k <= 9)
 				{
-					printf(",   ");
+					printf(",   %d", k);
 				}
 				else if (k <= 99)
 				{
-					printf(",  ");
+					printf(",  %d", k);
 				}
 				else
 				{
-					printf(", ");
+					printf(", %d", k);
 				}
-				printf("%d", k);
 				j++;
 			}
 			_putchar('\n');
