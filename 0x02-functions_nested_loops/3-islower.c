@@ -1,7 +1,8 @@
 #include "main.h"
 /**
   * _islower - entry point
-  * @x is the char
+  * @x: is the char
+  *
   * Return: 0 or 1
   */
 int _islower(int x)
