@@ -1,1 +1,4 @@
-int _putchar(char c)
+#ifndef HEADER
+#define HEADER
+int _putchar(char c);
+#endif
