@@ -15,7 +15,7 @@ int main(void)
 	while (i <= 50)
 	{
 		next = f + s;
-		printf(", %llu", next);
+		 printf(", %llu", next);
 		f = s;
 		s = next;
 		i++;
