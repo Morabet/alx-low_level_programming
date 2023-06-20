@@ -5,13 +5,14 @@
   */
 void times_table(void)
 {
-	int i = 0;
-	int j = 0;
+	int i = 1;
+	int j;
 	int k;
 
 	while (i < 10)
 	{
-		j = 0;
+		_putchar('0');
+		j = 1;
 		while (j < 10)
 		{
 			k = i * j;
