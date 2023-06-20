@@ -1,13 +1,13 @@
 #include "main.h"
 /**
   *  _abs - entry point
-  * @int: param
+  * @x: param
   *
   * Return: value of abs
   */
-int _abs(int)
+int _abs(int x)
 {
-	int y = abs(int);
+	int y = abs(int x);
 
 	return (y);
 }
