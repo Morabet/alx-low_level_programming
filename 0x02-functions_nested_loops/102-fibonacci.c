@@ -10,15 +10,16 @@ int main(void)
 	int i = 3;
 	int f = 1, s = 2, next;
 
-	printf("%d\n", f);
-	printf("%d\n", s);
+	printf("%d, ", f);
+	printf("%d, ", s);
 	while (i <= 50)
 	{
 		next = f + s;
-		printf("%d\n", next);
+		printf("%d' ", next);
 		f = s;
 		s = next;
 		i++;
 	}
+	printf("\n");
 	return (0);
 }
