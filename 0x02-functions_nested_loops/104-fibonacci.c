@@ -7,33 +7,17 @@
   */
 int main(void)
 {
-	int counter;
-	unsigned long a = 1;
-	unsigned long b = 1;
-	unsigned long sum = 0;
-	long a_head, a_tail, b_head, b_tail, sum_head, sum_tail;
+	int i = 3;
+	unsigned long f = 1, s = 2, next;
 
-	printf("1");
-	for (counter = 2; counter <= 98; counter++)
+	printf("1, 2");
+	while (i <= 98)
 	{
-		sum = a + b;
-		a = b;
-		b = sum;
-		if (sum > 9999999999)
-		{
-			sum_head = sum / 10000000000;
-			sum_tail = sum % 10000000000;
-			b_head = b / 10000000000;
-			b_tail = b % 10000000000;
-			b_head += sum_head;
-			a_head = b_head + (b_tail + sum_tail) / 10000000000;
-			a_tail = (b_tail + sum_tail) % 10000000000;
-			printf(", %ld%09ld", a_head, a_tail);
-		}
-		else
-		{
-			printf(", %lu", sum);
-		}
+		next = f + s;
+		 printf(", %lu", next);
+		f = s;
+		s = next;
+		i++;
 	}
 	printf("\n");
 	return (0);
