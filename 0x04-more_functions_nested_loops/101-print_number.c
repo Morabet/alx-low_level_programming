@@ -3,6 +3,7 @@
   * print_number - entry point
   * @n: param
   *
+  * Return: void
   */
 void print_number(int n)
 {
@@ -11,7 +12,7 @@ void print_number(int n)
 	if (n == 0)
 	{
 	_putchar('0');
-	return;
+	return ;
 	}
 	if (n < 0)
 	{
