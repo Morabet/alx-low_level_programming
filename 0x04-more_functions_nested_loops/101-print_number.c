@@ -1,5 +1,4 @@
-#include "main"
-#include <math.h>
+#include "main.h"
 /**
   * print_number - entry point
   * @n: param
@@ -16,9 +15,7 @@ void print_number(int n)
 		n = -n;
 	}
 	while (n / divisor >= 10)
-	{
 		divisor *= 10;
-	}
 	while (divisor > 0)
 	{
 		_putchar('0' + (n / divisor));
