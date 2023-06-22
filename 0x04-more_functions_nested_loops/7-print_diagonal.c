@@ -3,6 +3,7 @@
   * print_diagonal - entry point
   * @n: param
   *
+  * Return: void
   */
 void print_diagonal(int n)
 {
@@ -14,11 +15,12 @@ void print_diagonal(int n)
 		{
 			for (j = 0; j < i; j++)
 			{
-				putchar(' ');
+				_putchar(' ');
 			}
-			putchar('\\');
-			putchar('\n');
+			_putchar('\\');
+			_putchar('\n');
 		}
 	}
-	putchar('\n');
+	else
+		_putchar('\n');
 }
