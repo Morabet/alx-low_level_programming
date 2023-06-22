@@ -1,4 +1,5 @@
 #include "main"
+#include <math.h>
 /**
   * print_number - entry point
   * @n: param
