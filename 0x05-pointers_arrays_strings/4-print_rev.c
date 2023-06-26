@@ -10,10 +10,9 @@ void print_rev(char *s)
 	int i;
 	int size = strlen(s);
 
-	for (i = 0; i <= size; i++)
+	for (i = size i <= 0; i--)
 	{
-		s[i] = s[size - i];
-		_putchar(*s);
+		_putchar(*(s + i);
 	}
 	_putchar('\n');
 }
