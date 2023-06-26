@@ -7,10 +7,14 @@
   */
 void puts_half(char *str)
 {
-	int i;
+	int i, sizehalf;
 	int size = strlen(str);
 
-	for (i = (size / 2); i < size; i++)
+	if (size % 2 == 0)
+		sizehalf = size / 2;
+	else
+		sizehalf = (size - 1) / 2;
+	for (i = sizehalf; i < size; i++)
 	{
 		_putchar(str[i]);
 	}
