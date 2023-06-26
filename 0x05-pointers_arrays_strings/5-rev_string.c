@@ -9,6 +9,7 @@ void rev_string(char *s)
 {
 	int i;
 	int size = strlen(s);
+	char t;
 
 
 	for (i = 0; i <= (size / 2); i++)
