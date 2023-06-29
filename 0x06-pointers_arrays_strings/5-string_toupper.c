@@ -13,7 +13,7 @@ char *string_toupper(char *s)
 
 	while (*c != '\0')
 	{
-		if(*c == '\\')
+		if (*c == '\\')
 			c++;
 		if (*c >= 'a' && *c <= 'z')
 		{
