@@ -8,13 +8,11 @@
   */
 void _print(char *s)
 {
-	if (*s > '\0')
+	if (*s != '\0')
 	{
 		_print(++s);
 		_putchar(*s);
 	}
-	if (*s == '\0')
-		_putchar('\n');
 }
 /**
  * _print_rev_recursion - prints a string in reverse.
