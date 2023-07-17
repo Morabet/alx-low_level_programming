@@ -1,6 +1,6 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MACRO_PI
+#define _MACRO_PI
 
-#define SIZE 1024 
+#define PI 3.14159265359
 
 #endif
