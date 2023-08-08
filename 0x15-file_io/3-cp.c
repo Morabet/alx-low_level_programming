@@ -32,45 +32,6 @@ void open_to(int *to, int *from, char *name)
 		exit(99);
 	}
 }
-
-/**
- * close_files - to call when closing files
- * @from: pointer to the fisrt FD
- * @to: pointer to the second FD
- * Return: void.
- */
-void close_files(int *from, int *to)
-{
-	if (close(*from) == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", *from);
-		exit(100);
-	}
-	if (close(*to) == -1)
-	{
-		dprintf(2, "Error: Can't close fd %d\n", *to);
-		exit(100);
-	}
-}
-/**
- * read_write_error - if there is an error while reading or writting.
- * @code: code to exit with
- * @from: pointer to the fisrt FD
- * @to: pointer to the second FD
- * @name: file name
- * Return: void.
- */
-void read_write_error(int code, int *from, int *to, char *name)
-{
-	if (code == 98)
-		dprintf(2, "Error: Can't read from file %s\n", name);
-	if (code == 99)
-		dprintf(2, "Error: Can't write to %s\n", name);
-
-	close_files(from, to);
-	exit(code);
-}
-
 /**
  * main - check the code for ALX School students.
  *
@@ -97,10 +58,10 @@ int main(int ac, char **av)
 	{
 		r1 = read(from, txt, 1024);
 		if (r1 == -1)
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
+			dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
 		r2 = write(to, txt, r1);
 		if (r2 < r1)
-			dprintf(2, "Error: Can't read from file %s\n", argv[2]), exit(99);
+			dprintf(2, "Error: Can't read from file %s\n", av[2]), exit(99);
 	}
 	if (close(from) == -1)
 		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
