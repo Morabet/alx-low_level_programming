@@ -97,18 +97,15 @@ int main(int ac, char **av)
 	{
 		r1 = read(from, txt, 1024);
 		if (r1 == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]), exit(98);
 		r2 = write(to, txt, r1);
 		if (r2 < r1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-			exit(99);
-		}
+			dprintf(2, "Error: Can't read from file %s\n", argv[2]), exit(99);
 	}
-	close_files(&from, &to);
+	if (close(from) == -1)
+		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
+	if (close(to) == -1)
+		dprintf(2, "Error: Can't close fd %d\n", to), exit(100);
+
 	return (0);
 }
