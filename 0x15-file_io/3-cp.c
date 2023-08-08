@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	int to, from, r1;
+	int to, from, r;
 	char txt[1024];
 
 	if (ac != 3)
