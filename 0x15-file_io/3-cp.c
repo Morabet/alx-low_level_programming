@@ -8,7 +8,8 @@
  */
 int main(int ac, char **av)
 {
-	int to, from, r;
+	int to, from;
+	ssize_t r;
 	char txt[1024];
 
 	if (ac != 3)
@@ -28,9 +29,9 @@ int main(int ac, char **av)
 	if (r == -1)
 		dprintf(2, "Error: Can't write to %s\n", av[1]), exit(98);
 
-	if (close(from) == -1)
+	if (close(from))
 		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
-	if (close(to) == -1)
+	if (close(to))
 		dprintf(2, "Error: Can't close fd %d\n", to), exit(100);
 
 	return (0);
