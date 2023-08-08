@@ -97,13 +97,18 @@ int main(int ac, char **av)
 	{
 		r1 = read(from, txt, 1024);
 		if (r1 == -1)
-			read_write_error(98, &from, &to, av[1]);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
 
 		r2 = write(to, txt, r1);
 		if (r2 < r1)
-			read_write_error(99, &from, &to, av[2]);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+			exit(99);
+		}
 	}
-
 	close_files(&from, &to);
 	return (0);
 }
