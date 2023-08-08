@@ -67,7 +67,6 @@ void read_write_error(int code, int *from, int *to, char *name)
 	if (code == 99)
 		dprintf(2, "Error: Can't write to %s\n", name);
 
-	close_files(from, to);
 	exit(code);
 }
 
