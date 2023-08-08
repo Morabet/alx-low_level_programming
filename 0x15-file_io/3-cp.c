@@ -80,7 +80,7 @@ void read_write_error(int code, int *from, int *to, char *name)
  */
 int main(int ac, char **av)
 {
-	int to, from, r = 1024;
+	int to, from, r1 = 1024, r2 = 0;
 	char txt[1024];
 
 	if (ac != 3)
@@ -93,14 +93,14 @@ int main(int ac, char **av)
 
 	open_to(&to, &from, av[2]);
 
-	while (r == 1024)
+	while (r1 == 1024)
 	{
-		r = read(from, txt, 1024);
-		if (r == -1)
+		r1 = read(from, txt, 1024);
+		if (r1 == -1)
 			read_write_error(98, &from, &to, av[1]);
 
-		r = write(to, txt, r);
-		if (r == -1)
+		r2 = write(to, txt, r1);
+		if (r2 < r1)
 			read_write_error(99, &from, &to, av[2]);
 	}
 
