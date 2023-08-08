@@ -32,7 +32,7 @@ int main(int ac, char **av)
 	if (close(from))
 		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
 	if (close(to))
-		dprintf(2, "Error: Can't close fd %d\n", to), exit(100);
+		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
 
 	return (0);
 }
