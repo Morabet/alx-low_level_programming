@@ -8,7 +8,7 @@
  */
 int main(int ac, char **av)
 {
-	int to, from, r1 = 1024, r2 = 0;
+	int to, from, r1;
 	char txt[1024];
 
 	if (ac != 3)
@@ -22,15 +22,12 @@ int main(int ac, char **av)
 	if (to == -1)
 		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
 
-	while (r1 == 1024)
-	{
-		r1 = read(from, txt, 1024);
-		if (r1 == -1)
-			dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
-		r2 = write(to, txt, r1);
-		if (r2 < r1)
-			dprintf(2, "Error: Can't read from file %s\n", av[2]), exit(99);
-	}
+	while ((r = read(from, txt, 1024)) > 0)
+		if (write(to, txt, r) != r)
+			dprintf(2, "Error: Can't write to %s\n", argv[2]), exit(99);
+	if (r == -1)
+		dprintf(2, "Error: Can't write to %s\n", argv[1]), exit(98);
+
 	if (close(from) == -1)
 		dprintf(2, "Error: Can't close fd %d\n", from), exit(100);
 	if (close(to) == -1)
