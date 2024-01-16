@@ -1,50 +1,48 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
- * min - finds the minimum of two values
- * @a: value
- * @b: value
- * Return: int
+ * jump_search - a function that searches for a value in
+ *        a sorted array of integers using the Jump search algorithm
+ * @array: pointer to the first element of the array to search in
+ * @size: the number of elements in array
+ * @value: the value to search for
+ * Return: the first index where value is located or -1
  */
-
-int min(int a, int b)
-{
-	return ((a < b) ? a : b);
-}
-
-/**
- * jump_search - searches for a value using the Jump search algorithm
- * @array: array to search in
- * @size: number of elements in array
- * @value: value to search for
- * Return: int
- */
-
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump_step = sqrt(size);
-	size_t i = 0, prev = 0;
+    size_t prev, next, step;
 
-	if (!array)
-		return (-1);
+    if (!array)
+        return (-1);
 
-	/*printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);*/
-	while (array[prev] < value && prev < size)
-	{
-		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
-		i = prev;
-		prev += jump_step;
+    prev = 0;
+    next = 0;
+    step = sqrt(size);
 
-		if (i >= size)
-			return (-1);
-	}
+    while ((next < size)  && (array[next] < value))
+    {
+        printf("Value checked array[%ld] = [%d]\n", next, array[next]);
 
-	printf("Value found between indexes [%ld] and [%ld]\n", i, prev);
-	for (i = prev; i <= (size_t)min(jump_step, size - 1) && value >= array[i]; i++)
-	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] == value)
-			return (i);
-	}
-	return (-1);
+        prev = next;
+        next += step;
+
+        if (prev >= size)
+            return (-1);
+    }
+
+    printf("Value found between indexes [%ld] and [%ld]\n", prev, next);
+    next = next >= size ? size - 1 : next;
+
+    while ((prev <= next) && (array[prev] <= value))
+    {
+        printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
+
+        if (array[prev] == value)
+            return (prev);
+        prev++;
+    }
+
+
+    return (-1);
 }
