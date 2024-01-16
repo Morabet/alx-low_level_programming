@@ -1,4 +1,4 @@
-#ifndef SEARG_H
+#ifndef SEARH_H
 #define SEARH_H
 
 #include <stdio.h>
